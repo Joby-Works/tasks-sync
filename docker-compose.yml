@@ -1,0 +1,14 @@
+services:
+  tasks-sync:
+    image: tomsquest/docker-radicale
+    restart: unless-stopped
+    ports:
+      - 5232:5232
+    volumes:
+      - ./data:/data
+      - ./config:/config
+      - ./ssl:/etc/ssl
+    environment:
+      - USER=ccamacho
+      - PASSWORD=something123
+
